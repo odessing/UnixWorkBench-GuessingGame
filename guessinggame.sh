@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+# File: guessinggame.sh
+
 # This function guesses the total number of files in this GitHub directory
 
 # short function that asks the user to enter a number
@@ -15,7 +18,7 @@ do
     numberguess
     if [[ ! $guess =~ ^[0-9]*$ ]]
     then
-        echo "Error guess an integer number.."
+        echo "Error! Guess an integer number.. Try again!"
     elif [[ $guess -gt $n_files ]]
     then
         echo "There are less than $guess files in this directory.. Try again!"        
