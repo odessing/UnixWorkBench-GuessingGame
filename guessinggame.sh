@@ -12,8 +12,11 @@ n_files=$(ls | wc -l) # variable with the number of files in the directory
 
 while [[ $guess -ne $n_files ]]
 do
-    numberguess 
-    if [[ $guess -gt $n_files ]]
+    numberguess
+    if [[ ! $guess =~ ^[0-9]*$ ]]
+    then
+        echo "Error guess an integer number.."
+    elif [[ $guess -gt $n_files ]]
     then
         echo "There are less than $guess files in this directory.. Try again!"        
     elif [[ $guess -lt $n_files ]]
